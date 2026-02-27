@@ -1,4 +1,26 @@
+# Dependencies
 node_modules/
 package-lock.json
+
+# Build intermediates
 assets/images/screenshots/*.png
 assets/images/*.png
+
+# Claude Code / Riker (dev tooling)
+.claude/
+.riker.json
+CLAUDE.md
+
+# Dev notes & build scripts
+IMAGE-REQUIREMENTS.md
+scripts/
+
+# Apache config (not used on GitHub Pages)
+.htaccess
+
+# Node config (dev only)
+package.json
+
+# OS files
+.DS_Store
+Thumbs.db
