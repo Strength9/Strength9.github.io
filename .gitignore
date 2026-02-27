@@ -1,0 +1,4 @@
+node_modules/
+package-lock.json
+assets/images/screenshots/*.png
+assets/images/*.png

@@ -3,35 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Our Work | Web Design Portfolio | Strength 9 Design</title>
-  <meta name="description" content="Explore the Strength 9 Design portfolio. SaaS platforms, WordPress sites, and corporate branding — bold, high-performance digital work from Kent.">
-  <link rel="canonical" href="https://strength9.co.uk/portfolio">
+  <title>Our Work | Web Design Portfolio | Strength 9</title>
+  <meta name="description" content="Explore the Strength 9 portfolio. SaaS platforms, WordPress sites, and corporate branding — bold, high-performance digital work from Kent.">
+  <link rel="canonical" href="https://strength9.co.uk/portfolio/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Our Work | Web Design Portfolio | Strength 9 Design">
-  <meta property="og:description" content="Explore the Strength 9 Design portfolio. SaaS platforms, WordPress sites, and corporate branding — bold, high-performance digital work from Kent.">
-  <meta property="og:url" content="https://strength9.co.uk/portfolio">
-  <meta property="og:image" content="https://strength9.co.uk/assets/logos/Strength9.png">
+  <meta property="og:title" content="Our Work | Web Design Portfolio | Strength 9">
+  <meta property="og:description" content="Explore the Strength 9 portfolio. SaaS platforms, WordPress sites, and corporate branding — bold, high-performance digital work from Kent.">
+  <meta property="og:url" content="https://strength9.co.uk/portfolio/">
+  <meta property="og:image" content="https://strength9.co.uk/assets/logos/Strength9.webp">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Our Work | Web Design Portfolio | Strength 9 Design">
-  <meta name="twitter:description" content="Explore the Strength 9 Design portfolio. SaaS platforms, WordPress sites, and corporate branding — bold, high-performance digital work from Kent.">
-  <meta name="twitter:image" content="https://strength9.co.uk/assets/logos/Strength9.png">
+  <meta name="twitter:title" content="Our Work | Web Design Portfolio | Strength 9">
+  <meta name="twitter:description" content="Explore the Strength 9 portfolio. SaaS platforms, WordPress sites, and corporate branding — bold, high-performance digital work from Kent.">
+  <meta name="twitter:image" content="https://strength9.co.uk/assets/logos/Strength9.webp">
 
   <!-- Favicon -->
   <link rel="icon" href="/assets/icons/favicon.ico" sizes="any">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
 
-  <!-- Google Fonts — Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.min.css">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -40,12 +36,12 @@
     "@graph": [
       {
         "@type": "WebPage",
-        "name": "Our Work | Web Design Portfolio | Strength 9 Design",
-        "description": "Explore the Strength 9 Design portfolio. SaaS platforms, WordPress sites, and corporate branding from Kent.",
+        "name": "Our Work | Web Design Portfolio | Strength 9",
+        "description": "Explore the Strength 9 portfolio. SaaS platforms, WordPress sites, and corporate branding from Kent.",
         "url": "https://strength9.co.uk/portfolio/",
         "publisher": {
           "@type": "Organization",
-          "name": "Strength 9 Design",
+          "name": "Strength 9 Ltd",
           "url": "https://strength9.co.uk"
         }
       },
@@ -68,8 +64,8 @@
   <!-- Header -->
   <header class="header">
     <div class="header__inner">
-      <a href="/" class="header__logo" aria-label="Strength 9 Design — Home">
-        <img src="/assets/logos/Strength9.png" alt="Strength 9 Design" width="180" height="40">
+      <a href="/" class="header__logo" aria-label="Strength 9 — Home">
+        <img src="/assets/logos/Strength9.webp" alt="Strength 9" width="268" height="40">
       </a>
 
       <button class="nav__toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
@@ -98,7 +94,7 @@
   <main id="main">
 
     <!-- Page Header -->
-    <section class="page-header">
+    <section class="page-header page-header--portfolio">
       <h1 class="fade-in">Our Work</h1>
       <p class="fade-in">Projects built with craft and purpose — every pixel considered, every line of code intentional.</p>
     </section>
@@ -114,66 +110,121 @@
         <!-- Filter Buttons -->
         <div class="filters fade-in" role="group" aria-label="Filter portfolio by category">
           <button class="filter-btn filter-btn--active" data-filter="all" type="button">All</button>
-          <button class="filter-btn" data-filter="web" type="button">Web Design</button>
           <button class="filter-btn" data-filter="saas" type="button">SaaS</button>
           <button class="filter-btn" data-filter="wordpress" type="button">WordPress</button>
+          <button class="filter-btn" data-filter="web" type="button">Web Design</button>
           <button class="filter-btn" data-filter="branding" type="button">Branding</button>
+          <button class="filter-btn" data-filter="corporate" type="button">Corporate</button>
         </div>
 
         <!-- Portfolio Grid -->
         <div class="portfolio-grid">
 
-          <!-- Item 1: SubSpace -->
-          <a href="#" class="portfolio-item fade-in" data-category="saas">
-            <div class="portfolio-item__image" role="img" aria-label="SubSpace SaaS platform interface" style="background: linear-gradient(135deg, #2563EB, #06B6D4);"></div>
+          <!-- Item 1: lotIQ -->
+          <a href="/portfolio/lotiq/" class="portfolio-item fade-in" data-category="saas">
+            <img class="portfolio-item__image" src="/assets/images/screenshots/lotiq.webp" alt="lotIQ automotive dealership platform" width="1280" height="800" loading="lazy">
             <div class="portfolio-item__overlay">
-              <h3 class="portfolio-item__title">SubSpace</h3>
+              <h3 class="portfolio-item__title">lotIQ</h3>
               <p class="portfolio-item__category">SaaS Platform</p>
             </div>
           </a>
 
-          <!-- Item 2: Gearbox CRM -->
-          <a href="#" class="portfolio-item fade-in" data-category="saas">
-            <div class="portfolio-item__image" role="img" aria-label="Gearbox CRM sales dashboard" style="background: linear-gradient(135deg, #1D4ED8, #3B82F6);"></div>
+          <!-- Item 2: Wellington Country Park -->
+          <a href="/portfolio/wellington-country-park/" class="portfolio-item fade-in" data-category="wordpress">
+            <img class="portfolio-item__image" src="/assets/images/screenshots/wellington-country-park.webp" alt="Wellington Country Park visitor attraction website" width="1280" height="800" loading="lazy">
             <div class="portfolio-item__overlay">
-              <h3 class="portfolio-item__title">Gearbox CRM</h3>
-              <p class="portfolio-item__category">Sales CRM</p>
-            </div>
-          </a>
-
-          <!-- Item 3: LotIQ -->
-          <a href="#" class="portfolio-item fade-in" data-category="saas">
-            <div class="portfolio-item__image" role="img" aria-label="LotIQ automotive management platform" style="background: linear-gradient(135deg, #06B6D4, #2563EB);"></div>
-            <div class="portfolio-item__overlay">
-              <h3 class="portfolio-item__title">LotIQ</h3>
-              <p class="portfolio-item__category">Automotive Platform</p>
-            </div>
-          </a>
-
-          <!-- Item 4: KF Drilling -->
-          <a href="#" class="portfolio-item fade-in" data-category="web">
-            <div class="portfolio-item__image" role="img" aria-label="KF Drilling corporate website" style="background: linear-gradient(135deg, #111827, #2563EB);"></div>
-            <div class="portfolio-item__overlay">
-              <h3 class="portfolio-item__title">KF Drilling</h3>
-              <p class="portfolio-item__category">Corporate Website</p>
-            </div>
-          </a>
-
-          <!-- Item 5: Country Automotive -->
-          <a href="#" class="portfolio-item fade-in" data-category="wordpress">
-            <div class="portfolio-item__image" role="img" aria-label="Country Automotive WordPress website" style="background: linear-gradient(135deg, #3B82F6, #10B981);"></div>
-            <div class="portfolio-item__overlay">
-              <h3 class="portfolio-item__title">Country Automotive</h3>
+              <h3 class="portfolio-item__title">Wellington Country Park</h3>
               <p class="portfolio-item__category">WordPress Site</p>
             </div>
           </a>
 
-          <!-- Item 6: Teach Cricket -->
-          <a href="#" class="portfolio-item fade-in" data-category="web">
-            <div class="portfolio-item__image" role="img" aria-label="Teach Cricket web application" style="background: linear-gradient(135deg, #1D4ED8, #06B6D4);"></div>
+          <!-- Item 3: Burl & Bow -->
+          <a href="/portfolio/burl-and-bow/" class="portfolio-item fade-in" data-category="branding">
+            <img class="portfolio-item__image" src="/assets/images/screenshots/burlandbow.webp" alt="Burl &amp; Bow artisan furniture website" width="1280" height="800" loading="lazy">
             <div class="portfolio-item__overlay">
-              <h3 class="portfolio-item__title">Teach Cricket</h3>
-              <p class="portfolio-item__category">Web Application</p>
+              <h3 class="portfolio-item__title">Burl &amp; Bow</h3>
+              <p class="portfolio-item__category">Branding &amp; Website</p>
+            </div>
+          </a>
+
+          <!-- Item 4: APH Financial -->
+          <a href="/portfolio/aph-financial/" class="portfolio-item fade-in" data-category="corporate">
+            <img class="portfolio-item__image" src="/assets/images/screenshots/aph-financial.webp" alt="APH Financial professional services website" width="1280" height="800" loading="lazy">
+            <div class="portfolio-item__overlay">
+              <h3 class="portfolio-item__title">APH Financial</h3>
+              <p class="portfolio-item__category">Corporate Website</p>
+            </div>
+          </a>
+
+          <!-- Item 5: Boakes Joinery -->
+          <a href="/portfolio/boakes-joinery/" class="portfolio-item fade-in" data-category="wordpress">
+            <img class="portfolio-item__image" src="/assets/images/screenshots/boakes-joinery.webp" alt="Boakes Joinery custom woodwork website" width="1280" height="800" loading="lazy">
+            <div class="portfolio-item__overlay">
+              <h3 class="portfolio-item__title">Boakes Joinery</h3>
+              <p class="portfolio-item__category">WordPress Site</p>
+            </div>
+          </a>
+
+          <!-- Item 6: Swiftest -->
+          <a href="/portfolio/swiftest/" class="portfolio-item fade-in" data-category="web">
+            <img class="portfolio-item__image" src="/assets/images/screenshots/swiftest.webp" alt="Swiftest courier services website" width="1280" height="800" loading="lazy">
+            <div class="portfolio-item__overlay">
+              <h3 class="portfolio-item__title">Swiftest</h3>
+              <p class="portfolio-item__category">Web Design</p>
+            </div>
+          </a>
+
+          <!-- Item 7: Wellington Riding -->
+          <a href="/portfolio/wellington-riding/" class="portfolio-item fade-in" data-category="web">
+            <img class="portfolio-item__image" src="/assets/images/screenshots/wellington-riding.webp" alt="Wellington Riding equestrian centre website" width="1280" height="800" loading="lazy">
+            <div class="portfolio-item__overlay">
+              <h3 class="portfolio-item__title">Wellington Riding</h3>
+              <p class="portfolio-item__category">Web Design</p>
+            </div>
+          </a>
+
+          <!-- Item 8: AvaTal -->
+          <a href="/portfolio/avatal/" class="portfolio-item fade-in" data-category="web">
+            <img class="portfolio-item__image" src="/assets/images/screenshots/avatal.webp" alt="AvaTal recruitment platform" width="1280" height="800" loading="lazy">
+            <div class="portfolio-item__overlay">
+              <h3 class="portfolio-item__title">AvaTal</h3>
+              <p class="portfolio-item__category">Web Design</p>
+            </div>
+          </a>
+
+          <!-- Item 9: Wellington Farm Shop -->
+          <a href="/portfolio/wellington-farm-shop/" class="portfolio-item fade-in" data-category="wordpress">
+            <img class="portfolio-item__image" src="/assets/images/screenshots/wellington-farm-shop.webp" alt="Wellington Farm Shop e-commerce website" width="1280" height="800" loading="lazy">
+            <div class="portfolio-item__overlay">
+              <h3 class="portfolio-item__title">Wellington Farm Shop</h3>
+              <p class="portfolio-item__category">WordPress Site</p>
+            </div>
+          </a>
+
+          <!-- Item 10: Imre Banana -->
+          <a href="/portfolio/imre-banana/" class="portfolio-item fade-in" data-category="branding">
+            <img class="portfolio-item__image" src="/assets/images/screenshots/imre-banana.webp" alt="Imre Banana brand and website" width="1280" height="800" loading="lazy">
+            <div class="portfolio-item__overlay">
+              <h3 class="portfolio-item__title">Imre Banana</h3>
+              <p class="portfolio-item__category">Branding &amp; Website</p>
+            </div>
+          </a>
+
+          <!-- Item 11: Wellington Barns -->
+          <a href="/portfolio/wellington-barns/" class="portfolio-item fade-in" data-category="wordpress">
+            <img class="portfolio-item__image" src="/assets/images/screenshots/wellington-barns.webp" alt="Wellington Barns wedding venue website" width="1280" height="800" loading="lazy">
+            <div class="portfolio-item__overlay">
+              <h3 class="portfolio-item__title">Wellington Barns</h3>
+              <p class="portfolio-item__category">WordPress Site</p>
+            </div>
+          </a>
+
+          <!-- Item 12: HR Matters -->
+          <a href="/portfolio/hr-matters/" class="portfolio-item fade-in" data-category="corporate">
+            <img class="portfolio-item__image" src="/assets/images/screenshots/hr-matters.webp" alt="HR Matters corporate website" width="1280" height="800" loading="lazy">
+            <div class="portfolio-item__overlay">
+              <h3 class="portfolio-item__title">HR Matters</h3>
+              <p class="portfolio-item__category">Corporate Website</p>
             </div>
           </a>
 
@@ -195,26 +246,52 @@
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__brand">
-        <a href="/" aria-label="Strength 9 Design home">
-          <img src="/assets/logos/Strength9.png" alt="Strength 9 Design" width="160" height="36">
+        <a href="/" aria-label="Strength 9 home">
+          <img src="/assets/logos/Strength9.webp" alt="Strength 9" width="242" height="36">
         </a>
         <p>A bold digital agency crafting striking websites, SaaS platforms, and brand identities for ambitious businesses.</p>
       </div>
+
       <div>
-        <h3 class="footer__heading">Pages</h3>
+        <h3 class="footer__heading">Services</h3>
         <ul class="footer__links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/services/">Services</a></li>
+          <li><a href="/services/">Web Design</a></li>
+          <li><a href="/services/">SaaS Development</a></li>
+          <li><a href="/services/">WordPress</a></li>
+          <li><a href="/services/">Branding</a></li>
+          <li><a href="/services/">SEO</a></li>
           <li><a href="/hosting/">Hosting</a></li>
-          <li><a href="/products/">Products</a></li>
-          <li><a href="/portfolio/">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer__heading">Company</h3>
+        <ul class="footer__links">
           <li><a href="/about/">About</a></li>
+          <li><a href="/portfolio/">Portfolio</a></li>
+          <li><a href="/products/">Products</a></li>
           <li><a href="/contact/">Contact</a></li>
         </ul>
       </div>
+
+      <div class="footer__contact">
+        <h3 class="footer__heading">Contact</h3>
+        <p><a href="mailto:info@strength9.co.uk">info@strength9.co.uk</a></p>
+        <p><a href="tel:+447540418087">07540 418087</a></p>
+        <a href="/contact/" class="footer__btn">Get in Touch</a>
+      </div>
     </div>
+
     <div class="footer__bottom">
-      <span>&copy; 2026 Strength 9 Design. All rights reserved.</span>
+      <span>&copy; 2026 Strength 9 Ltd. All rights reserved.</span>
+      <div class="footer__legal">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/cookies/">Cookies</a>
+        <a href="/terms/">Terms</a>
+      </div>
+    </div>
+    <div class="footer__registration">
+      Strength 9 Ltd is registered in England &amp; Wales. Company No. 06528809.
     </div>
   </footer>
 

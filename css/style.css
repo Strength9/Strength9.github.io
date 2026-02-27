@@ -1,7 +1,35 @@
 /* ==========================================================================
-   Strength 9 Design — Agency Website
+   Strength 9 Ltd — Agency Website
    Pure CSS — Mobile-first, responsive, accessible
    ========================================================================== */
+
+/* ---------- Self-hosted Inter Variable Font ---------- */
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Inter'),
+       url('../assets/fonts/inter-var-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+    U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+    U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+    U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('Inter'),
+       url('../assets/fonts/inter-var-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 /* ---------- Reset & Base ---------- */
 *,
@@ -108,6 +136,35 @@ h3 {
 p {
   margin-bottom: 1rem;
   max-width: 70ch;
+}
+
+/* ---------- Prose (long-form content: legal, blog) ---------- */
+.prose {
+  max-width: 100%;
+}
+
+.prose p {
+  max-width: 100%;
+}
+
+.prose h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose ul,
+.prose ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.25rem;
 }
 
 a {
@@ -459,6 +516,9 @@ ul, ol {
   min-height: calc(100dvh - 4.5rem);
   padding: 4rem 1.5rem;
   background-color: var(--color-bg-dark);
+  background-image: url('../assets/images/hero-bg.webp');
+  background-size: cover;
+  background-position: center;
   color: var(--color-bg-dark-text);
   overflow: clip;
 }
@@ -475,7 +535,7 @@ ul, ol {
   display: inline-block;
   padding: 0.375rem 1rem;
   background-color: rgba(37, 99, 235, 0.15);
-  color: var(--color-primary-light);
+  color: #93C5FD;
   font-weight: 600;
   font-size: 0.875rem;
   border-radius: 2rem;
@@ -491,7 +551,7 @@ ul, ol {
 
 .hero__text {
   font-size: clamp(1.0625rem, 1.5vw + 0.5rem, 1.25rem);
-  color: rgba(249, 250, 251, 0.8);
+  color: #D1D5DB;
   max-width: 50ch;
   margin-bottom: 2.5rem;
   line-height: 1.7;
@@ -505,11 +565,10 @@ ul, ol {
 
 .hero__gradient {
   position: absolute;
-  top: -50%;
-  right: -25%;
-  width: 80%;
-  height: 200%;
-  background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+  inset: 0;
+  background:
+    linear-gradient(to right, rgba(17,24,39,0.95) 0%, rgba(17,24,39,0.7) 40%, rgba(17,24,39,0.4) 70%, rgba(17,24,39,0.2) 100%),
+    radial-gradient(ellipse at center right, rgba(37,99,235,0.15) 0%, transparent 70%);
   z-index: 1;
   pointer-events: none;
 }
@@ -694,8 +753,8 @@ ul, ol {
 .cta {
   text-align: center;
   padding: var(--section-padding);
-  background-color: var(--color-bg-dark);
-  color: var(--color-bg-dark-text);
+  background-color: var(--color-primary);
+  color: #fff;
 }
 
 .cta h2 {
@@ -705,7 +764,7 @@ ul, ol {
 
 .cta p {
   margin: 0 auto 2rem;
-  color: rgba(249, 250, 251, 0.8);
+  color: #fff;
   font-size: 1.125rem;
 }
 
@@ -790,9 +849,15 @@ ul, ol {
   gap: 2rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .footer__inner {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer__inner {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
   }
 }
 
@@ -840,6 +905,14 @@ ul, ol {
   color: rgba(249, 250, 251, 0.5);
 }
 
+.footer__registration {
+  max-width: var(--max-width);
+  margin: 0.75rem auto 0;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: rgba(249, 250, 251, 0.4);
+}
+
 /* ---------- Scroll Animations ---------- */
 .fade-in {
   opacity: 0;
@@ -865,7 +938,17 @@ ul, ol {
   color: var(--color-bg-dark-text);
   padding: 4rem 1.5rem 3rem;
   text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+.page-header--services  { background-image: url('../assets/images/page-header-services.webp'); }
+.page-header--hosting   { background-image: url('../assets/images/page-header-hosting.webp'); }
+.page-header--products  { background-image: url('../assets/images/page-header-products.webp'); }
+.page-header--portfolio { background-image: url('../assets/images/page-header-portfolio.webp'); }
+.page-header--about     { background-image: url('../assets/images/page-header-about.webp'); }
+.page-header--contact   { background-image: url('../assets/images/page-header-contact.webp'); }
 
 .page-header h1 {
   color: #fff;
@@ -914,26 +997,37 @@ ul, ol {
 }
 
 .service-detail__list {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .service-detail__list li {
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
+  padding: 0.2rem 0;
+  padding-left: 1.25rem;
   position: relative;
+  font-size: 1rem;
+  line-height: 1.7;
   color: var(--color-text);
-  font-size: 0.9375rem;
 }
 
 .service-detail__list li::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 1rem;
+  top: 0.95rem;
   width: 6px;
   height: 6px;
   background-color: var(--color-primary);
   border-radius: 50%;
+}
+
+/* Tighter list styling inside cards */
+.card .service-detail__list li {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+}
+
+.card .service-detail__list li::before {
+  top: 0.88rem;
 }
 
 /* ---------- Product Cards ---------- */
@@ -1023,6 +1117,24 @@ ul, ol {
   font-size: 0.875rem;
   color: var(--color-text-light);
   margin-top: 0.5rem;
+}
+
+/* ---------- Credentials Callout ---------- */
+.credentials {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: var(--color-text-light);
+}
+
+.credentials strong {
+  color: var(--color-heading);
+}
+
+.credentials--large {
+  font-size: 1.1875rem;
+  max-width: 65ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ---------- Contact Info ---------- */
@@ -1149,30 +1261,58 @@ ul, ol {
 
 @media (min-width: 1024px) {
   .logo-grid {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
+}
+
+a.logo-grid__item {
+  text-decoration: none;
+  color: inherit;
 }
 
 .logo-grid__item {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 0.75rem;
-  background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
+  padding: 1.25rem 1rem;
+  background-color: rgba(255, 255, 255, 0.06);
   border-radius: var(--radius);
   font-size: 0.8125rem;
   font-weight: 600;
-  color: var(--color-text-light);
+  color: rgba(255, 255, 255, 0.5);
   text-align: center;
   line-height: 1.3;
-  min-height: 4rem;
-  transition: border-color var(--transition), color var(--transition);
+  min-height: 5rem;
+  transition: background-color var(--transition), transform var(--transition);
 }
 
 .logo-grid__item:hover {
-  border-color: var(--color-primary);
-  color: var(--color-heading);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.logo-grid__item img {
+  max-width: 100%;
+  max-height: 4.5rem;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.logo-grid__item--wellington {
+  background-color: #004a33;
+}
+
+.logo-grid__item--light {
+  background-color: #fff;
+}
+
+.logo-grid__item--blue {
+  background-color: #083156;
+}
+
+.logo-grid__item--dark {
+  background-color: #111;
 }
 
 /* ---------- Tech Grid ---------- */
@@ -1209,3 +1349,134 @@ ul, ol {
 .mt-3 { margin-top: 1.5rem; }
 .mt-4 { margin-top: 2rem; }
 .mb-0 { margin-bottom: 0; }
+
+/* ---------- Hosting Page ---------- */
+.hosting-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hosting-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background-color var(--transition);
+}
+
+.hosting-badge:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.highlight-card {
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-bg);
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+}
+
+.section--dark .service-detail__list li {
+  color: rgba(249, 250, 251, 0.85);
+}
+
+.section--dark .service-detail__list li::before {
+  background-color: var(--color-success);
+}
+
+/* ---------- Footer: Contact Column & Legal ---------- */
+.footer__contact p {
+  color: rgba(249, 250, 251, 0.7);
+  font-size: 0.9375rem;
+  margin-bottom: 0.25rem;
+}
+
+.footer__contact a {
+  color: rgba(249, 250, 251, 0.7);
+  transition: color var(--transition);
+}
+
+.footer__contact a:hover {
+  color: #fff;
+}
+
+.footer__btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--color-primary);
+  border-radius: var(--radius);
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.footer__btn:hover {
+  background-color: var(--color-primary-dark);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.footer__legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer__legal a {
+  color: rgba(249, 250, 251, 0.5);
+  font-size: 0.875rem;
+  transition: color var(--transition);
+}
+
+.footer__legal a:hover {
+  color: #fff;
+}
+
+/* ---------- FAQ Section ---------- */
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq__item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq__item:first-child {
+  border-top: 1px solid var(--color-border);
+}
+
+.faq__question {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin-bottom: 0.5rem;
+}
+
+.faq__answer {
+  color: var(--color-text-light);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+}
+
+.faq__answer p {
+  margin-bottom: 0;
+}
+
+/* ---------- Dark Section: Values Override ---------- */
+.section--dark .value__text {
+  color: rgba(249, 250, 251, 0.7);
+}
+
+.section--dark .value__icon {
+  background-color: rgba(37, 99, 235, 0.2);
+  color: #93C5FD;
+}

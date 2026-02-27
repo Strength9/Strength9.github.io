@@ -6,20 +6,25 @@
 (function () {
   'use strict';
 
-  var ENDPOINT = 'https://api.riker.strength9.com';
+  var ENDPOINT = 'https://api.riker.strength9.co.uk';
   var API_KEY = 'nxm_3dfdcd12ec0f85aca0e45fb12d5a09a9d15b0e1aac7f6a841190fcd89ac95271';
   var PROJECT_ID = 'db00d9df-0117-435d-b9ed-26333e8bf480';
 
   function send(payload) {
-    var body = JSON.stringify(payload);
-    if (navigator.sendBeacon) {
-      navigator.sendBeacon(ENDPOINT + '/ingest', body);
-    } else {
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', ENDPOINT + '/ingest', true);
-      xhr.setRequestHeader('Content-Type', 'application/json');
-      xhr.setRequestHeader('Authorization', 'Bearer ' + API_KEY);
-      xhr.send(body);
+    try {
+      var body = JSON.stringify(payload);
+      if (navigator.sendBeacon) {
+        var blob = new Blob([body], { type: 'application/json' });
+        navigator.sendBeacon(ENDPOINT + '/ingest', blob);
+      } else {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', ENDPOINT + '/ingest', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('Authorization', 'Bearer ' + API_KEY);
+        xhr.send(body);
+      }
+    } catch (e) {
+      // Silently fail — monitoring should never break the site
     }
   }
 
@@ -50,15 +55,17 @@
     report('error', msg, stack);
   });
 
-  // Heartbeat on page load
-  send({
-    level: 'info',
-    message: 'heartbeat',
-    metadata: {
-      url: window.location.href,
-      timestamp: new Date().toISOString()
-    },
-    source: 'website',
-    project_id: PROJECT_ID
-  });
+  // Heartbeat on page load (production only)
+  if (window.location.hostname === 'strength9.co.uk' || window.location.hostname === 'www.strength9.co.uk') {
+    send({
+      level: 'info',
+      message: 'heartbeat',
+      metadata: {
+        url: window.location.href,
+        timestamp: new Date().toISOString()
+      },
+      source: 'website',
+      project_id: PROJECT_ID
+    });
+  }
 })();
